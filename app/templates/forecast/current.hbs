@@ -1,0 +1,30 @@
+<div class="detailedContent">
+  <label>CURRENT CONDITIONS</label>
+  <div style="background-color: darkgrey; color: black; padding-left: 5px;">
+  <table class="table table-striped" >
+      <tr><td>DATE</td><td>{{format-unix-time model.forecastIo.currently.time 'MMMM Do, YYYY'}}</td></tr>
+      <tr><td>TIME</td><td>{{format-unix-time model.forecastIo.currently.time 'h:mm:ss a'}}</td></tr>
+      <tr><td>SUMMARY</td><td>{{model.forecastIo.currently.summary}}</td></tr>
+      <tr><td>NEAREST STORM DISTANCE</td><td>{{model.forecastIo.currently.nearestStormDistance}}</td></tr>
+      <tr><td>NEAREST STORM BEARING</td><td>{{model.forecastIo.currently.nearestStormBearing}}</td></tr>
+      <tr><td>PRECIPITATION INTENSITY</td><td>{{model.forecastIo.currently.precipIntensity}}</td></tr>
+      <tr><td>PRECIPITATION PROBABILITY</td><td>{{model.forecastIo.currently.precipProbability}}</td></tr>
+      <tr><td>APPARENT TEMPERATURE</td><td>{{model.forecastIo.currently.apparentTemperature}}</td></tr>
+      <tr><td>DEW POINT</td><td>{{model.forecastIo.currently.dewPoint}}</td></tr>
+      <tr><td>HUMIDITY</td><td>{{model.forecastIo.currently.humidity}}</td></tr>
+      <tr><td>WIND SPEED</td><td>{{model.forecastIo.currently.windSpeed}}</td></tr>
+      <tr><td>WIND BEARING</td><td>{{model.forecastIo.currently.windBearing}}</td></tr>
+      <tr><td>VISIBILITY</td><td>{{model.forecastIo.currently.visibility}}</td></tr>
+      <tr><td>CLOUD COVER</td><td>{{model.forecastIo.currently.cloudCover}}</td></tr>
+      <tr><td>PRESSURE</td><td>{{model.forecastIo.currently.pressure}}</td></tr>
+      <tr><td>OZONE</td><td>{{model.forecastIo.currently.ozone}}</td></tr>
+  </table>
+  </div>
+  {{#if model.hasMinute}}
+    {{#link-to "forecast.minutes" model.coordStr}}VIEW MINUTE-TO-MINUTE CONDITIONS{{/link-to}}
+  {{/if}}
+</div>
+
+
+
+

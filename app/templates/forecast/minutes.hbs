@@ -1,0 +1,22 @@
+{{#if model.hasMinute}}
+    <div class="detailedContent">
+        <label>MINUTE-TO-MINUTE CONDITIONS</label>
+        <div style="background-color: darkgrey; color: black; padding-left: 5px;">
+            <label>PRECIPITATION INTENSITY AND PROBABILITY</label>
+            <div style="max-height: 320px; overflow: auto;">
+              <table class="table table-striped">
+                  {{#each model.forecastIo.minutely.data as |minute|}}
+                    <tr>
+                        <td>{{format-unix-time minute.time 'h:mm:ss a'}}</td>
+                        <td>{{minute.precipProbability}}% chance of {{minute.precipIntensity}} intensity</td>
+                    </tr>
+                  {{/each}}
+              </table>
+            </div>
+        </div>
+      {{#link-to "forecast.current" model.coordStr}}VIEW CURRENT CONDITIONS{{/link-to}}
+    </div>
+
+{{else}}
+    Minute-to-minute weather data is unavailable
+{{/if}}

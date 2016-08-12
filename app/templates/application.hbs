@@ -1,0 +1,53 @@
+<div class="appWrapper">
+
+    <div class="searchBarHeader">
+        <div class="input-group">
+          {{input class='form-control' enter='getLatLongForLocation' value=locationToSearch placeholder='Find your forecast...'}}
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" {{action "getLatLongForLocation" locationToSearch}}>Go!</button>
+          </span>
+        </div>
+    </div>
+    <div class="resultsSection">
+      {{#if errorService.hasError}}
+          <div class="infoContainer">
+              <div class="errorDiv">
+                  <i class="fa fa-exclamation-circle" style="font-size:100px"></i>
+                  <br/>
+                  <label>{{errorService.errorText}}</label>
+              </div>
+          </div>
+      {{/if}}
+
+      {{#if searching}}
+          <div class="infoContainer">
+              <div class="searchingDiv">
+                  <i class="fa fa-circle-o-notch fa-spin" style="font-size:100px"></i>
+                  <br/>
+                  <label>DOING WORK</label>
+              </div>
+          </div>
+      {{/if}}
+      {{#if foundLatLong}}
+        {{outlet}}
+      {{/if}}
+
+      {{#unless foundLatLong}}
+        {{#unless searching}}
+          {{#unless errorService.hasError}}
+              <div class="infoContainer">
+                  <div class="searchingDiv">
+                      <i class="fa fa-exclamation-circle" style="font-size:100px"></i>
+                      <br/>
+                      <label>ENTER AN ADDRESS TO BEGIN YOUR SEARCH</label>
+                  </div>
+              </div>
+          {{/unless}}
+        {{/unless}}
+      {{/unless}}
+
+    </div>
+</div>
+
+
+

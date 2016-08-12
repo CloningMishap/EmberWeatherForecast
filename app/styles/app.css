@@ -1,0 +1,62 @@
+.appWrapper {
+  width: 400px;
+  min-height: 500px;
+  background-color: darkgrey;
+  padding-bottom: 5px;
+  margin: 5px;
+}
+
+.searchBarHeader{
+  width: 100%;
+  color: white;
+  background-color: #262626;
+  padding: 4px;
+}
+
+.infoContainer {
+  top: 200px;
+}
+
+.errorDiv {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.searchingDiv {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.quickSummary {
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: black;
+  color: white;
+}
+
+.quickSummaryIcon {
+  font-size: 50px;
+  padding-left: 10px;
+}
+
+.quickSummaryDegreeIcon {
+  font-size: 15px;
+  vertical-align: text-top;
+  padding-top: 7px;
+}
+
+.currentTemp {
+  font-size: 50px;
+  padding-left: 10px;
+}
+
+.detailedContent {
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+
+}

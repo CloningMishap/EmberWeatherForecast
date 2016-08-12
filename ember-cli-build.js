@@ -20,5 +20,19 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  // Bootstrap
+  app.import(app.bowerDirectory + '/bootstrap/dist/js/bootstrap.js');
+  app.import(app.bowerDirectory + '/bootstrap/dist/css/bootstrap.css');
+
+  // Weather icons
+  app.import('vendor/weather-icons.css');
+  app.import('vendor/weather-icons-wind.css');
+
+  // MomentJs
+  app.import(app.bowerDirectory + '/moment/moment.js');
+
+  // Font-awesome
+  app.import('vendor/font-awesome.css');
+
   return app.toTree();
 };

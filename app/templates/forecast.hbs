@@ -1,0 +1,18 @@
+<div>
+{{#if model.hasCurrent}}
+    <div class="quickSummary">
+
+      <img src="{{model.staticMapURL}}" style="border: black solid 3px;"/>
+      <i class="wi wi-forecast-io-{{model.forecastIo.currently.icon}} quickSummaryIcon"></i>
+      <label class="currentTemp">{{model.forecastIo.currently.temperature}}<i class="fa fa-circle-o quickSummaryDegreeIcon"></i></label>
+    </div>
+
+    <div>
+        <div>{{outlet}}</div>
+    </div>
+{{else}}
+  <div class="quickSummary">
+    <label>CURRENT WEATHER DATA UNAVAILABLE</label>
+  </div>
+{{/if}}
+</div>

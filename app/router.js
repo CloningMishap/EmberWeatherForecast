@@ -7,6 +7,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('forecast', { path: 'forecast/:forecast_coords' }, function() {
+    this.route('current');
+    this.route('minutes');
+  });
+  this.route('noMatch', { path: "*path"});
 });
 
 export default Router;
